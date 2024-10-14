@@ -21,7 +21,8 @@ public class ClientThread extends Thread {
             while ((message = inputReader.readLine()) != null) {
                 serverWriter.println(message);
             }
-
+            inputReader.close();
+            serverWriter.close();
             clientSocket.close();
             
         } catch (IOException e) {
